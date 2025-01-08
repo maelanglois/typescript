@@ -11,9 +11,9 @@ import prompts from "prompts";
 export interface CLIChoice extends Choice {
   action: Function;
 }
-
- 
-let solde = 100;
+  
+let essai = 1;
+const max = 3;
 
 /**
  * Represents a Command Line Interface (CLI) utility.
@@ -98,6 +98,7 @@ export class CLI {
   }
 
  public async connexion() {
+
   const user: User[] = [{
     username: "username",
     password: "password",
@@ -126,8 +127,13 @@ export class CLI {
     console.log(`Vous êtes bien connecté.e.`);
     setUser(connectedUser);
     connect(this);
-  } else {
+  } else if(essai < max){
+    essai++;
     console.error("Erreur lors de la connexion, veuillez réessayer.");
+    this.connexion();
+  } else {
+    console.error("Nombre de tentatives maximum atteint.")
+    this.quit();
   }
  }
 }

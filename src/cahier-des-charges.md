@@ -21,7 +21,7 @@ Cette application doit être développée avec Typescript, et doit être exécut
 - Il n'y a pas de base de données, vous pouvez stocker les données en mémoire _(pas de persistance)_ -->
 <!-- - La connexion est obligatoire pour accéder à l'application -->
 <!-- - Si le code PIN est incorrect, l'utilisateur doit être notifié -->
-- Après 3 tentatives invalides, l'application doit se fermer
+<!-- - Après 3 tentatives invalides, l'application doit se fermer -->
 
 ### Liste des choix possibles
 
