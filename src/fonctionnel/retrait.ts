@@ -5,13 +5,13 @@ import { getUser } from "../models/Connected";
 
 export async function retrait(choice: CLI){
     const user = getUser();
-    const retrait = await prompts({
+    const retirer = await prompts({
       type: "number",
-      name: "value",
+      name: "retrait",
       message:"Combien d'argent voulez-vous retirer ?",
-      validate: (value) => (Number.isInteger(value) && value > 0 ? true : "Vous devez retirer un montant supérieur à 0.")
+      validate: (retrait) => (Number.isInteger(retrait) && retrait > 0 ? true : "Vous devez retirer un montant supérieur à 0.")
     })
-    user.solde -= retrait.value;
+    user.solde -= retirer.retrait;
     console.log("Votre nouveau solde est de " + user.solde);
     connect(choice);
    }
