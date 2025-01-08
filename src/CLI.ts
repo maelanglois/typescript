@@ -1,5 +1,7 @@
 import type { Choice, PromptType } from "prompts";
 
+import bcrypt from "bcryptjs";
+
 import { User } from "./models/User";
 import { setUser, getUser } from "./models/Connected";
 
