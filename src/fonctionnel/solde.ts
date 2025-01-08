@@ -1,8 +1,10 @@
 import { connect } from "./connect";
+import { getUser } from "../models/Connected";
 
 import { CLI } from "../CLI";
 
 export async function solde(choice: CLI){
-  console.log("Votre solde est de " + soldes);
-  connect(choice);
- }
+    const user = getUser();
+    console.log("Votre solde est de " + user.solde);
+    connect(choice);
+}

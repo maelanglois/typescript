@@ -4,14 +4,10 @@ import { depot } from "./depot";
 import { solde } from "./solde";
 import { CLI } from "../CLI";
 
-/**
- * Fonction de connexion pour gérer les actions utilisateur.
- * @param cliInstance - Instance de la classe CLI pour accéder aux méthodes.
- */
 export async function connect(choice: CLI) {
   const response = await prompts({
     type: "select",
-    name: "action",
+    name: "value",
     message: "Quelle action voulez-vous faire ?",
     choices: [
       { title: "Déposer de l'argent", value: "depot" },
@@ -22,7 +18,7 @@ export async function connect(choice: CLI) {
     ],
   });
 
-  switch (response.action) {
+  switch (response.value) {
     case "depot":
       await depot(choice);
       break;

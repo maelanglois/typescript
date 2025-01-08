@@ -1,6 +1,9 @@
 import type { Choice, PromptType } from "prompts";
 
-import { connect, solde } from "./fonctionnel/connect"; // Importation de la fonction et de la variable solde
+import { User } from "./models/User";
+import { setUser, getUser } from "./models/Connected";
+
+import { connect } from "./fonctionnel/connect"; // Importation de la fonction et de la variable solde
 
 
 import prompts from "prompts";
@@ -95,10 +98,11 @@ export class CLI {
   }
 
  public async connexion() {
-  const user = {
+  const user: User[] = [{
     username: "username",
     password: "password",
-  }
+    solde: 0,
+  }]
 
   const response = await prompts([
     {
@@ -112,15 +116,18 @@ export class CLI {
       message: "Entrez votre mot de passe :",
     },
   ]);
-  
-  const username = response.username;
-  const password = response.password;
 
-  if (username === user.username && password === user.password) {
+  const connectedUser = user.find(
+    (user) =>
+      user.username === response.username && user.password === response.password
+  );
+
+  if(connectedUser) {
     console.log(`Vous êtes bien connecté.e.`);
+    setUser(connectedUser);
     connect(this);
   } else {
-    console.log("Erreur lors de la connexion, veuillez réessayer.");
+    console.error("Erreur lors de la connexion, veuillez réessayer.");
   }
  }
 }
