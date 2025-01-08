@@ -2,6 +2,7 @@ import prompts from "prompts";
 import { retrait } from "./retrait";
 import { depot } from "./depot";
 import { solde } from "./solde";
+import { history } from "./history";
 import { CLI } from "../CLI";
 
 export async function connect(choice: CLI) {
@@ -26,7 +27,7 @@ export async function connect(choice: CLI) {
       await retrait(choice);
       break;
     case "historique":
-      console.log("Voir l'historique (fonctionnalité à implémenter).");
+      await history(choice);
       break;
     case "solde":
       await solde(choice);

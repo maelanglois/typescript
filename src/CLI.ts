@@ -105,6 +105,7 @@ export class CLI {
     username: "username",
     password: "password",
     solde: 0,
+    historic: [],
   }]
 
   const response = await prompts([

@@ -14,5 +14,6 @@ export async function depot(choice: CLI) {
     })
     user.solde += deposer.depot;
     console.log("Votre nouveau solde est de " + user.solde);
+    user.historic.push("Dépôt de " + deposer.depot + "€")
     connect(choice);
    }
