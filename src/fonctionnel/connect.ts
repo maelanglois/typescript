@@ -4,8 +4,6 @@ import { depot } from "./depot";
 import { solde } from "./solde";
 import { CLI } from "../CLI";
 
-// export let solde = 100;
-
 /**
  * Fonction de connexion pour gérer les actions utilisateur.
  * @param cliInstance - Instance de la classe CLI pour accéder aux méthodes.
@@ -26,16 +24,16 @@ export async function connect(choice: CLI) {
 
   switch (response.action) {
     case "depot":
-      await depot();
+      await depot(choice);
       break;
     case "retrait":
-      await retrait();
+      await retrait(choice);
       break;
     case "historique":
       console.log("Voir l'historique (fonctionnalité à implémenter).");
       break;
     case "solde":
-      await solde();
+      await solde(choice);
       break;
     case "quitter":
       await choice.quit();

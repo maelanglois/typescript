@@ -1,8 +1,11 @@
 import prompts from "prompts";
+import { CLI } from "../CLI";
 
 import { connect } from "./connect";
 
-export async function depot() {
+let solde = 0;
+
+export async function depot(choice: CLI) {
     const deposer = await prompts({
       type: "number",
       name: "value",
@@ -11,5 +14,5 @@ export async function depot() {
     })
     solde += deposer.value;
     console.log("Votre nouveau solde est de " + solde);
-    connect();
+    connect(choice);
    }

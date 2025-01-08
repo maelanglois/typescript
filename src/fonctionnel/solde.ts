@@ -1,6 +1,8 @@
 import { connect } from "./connect";
 
-export async function solde(){
-  console.log("Votre solde est de " + solde);
-  connect();
+import { CLI } from "../CLI";
+
+export async function solde(choice: CLI){
+  console.log("Votre solde est de " + soldes);
+  connect(choice);
  }

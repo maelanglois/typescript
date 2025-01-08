@@ -1,7 +1,11 @@
 import prompts from "prompts";
 import { connect } from "./connect";
+import { CLI } from "../CLI";
 
-export async function retrait(){
+
+let solde = 0;
+
+export async function retrait(choice: CLI){
     const retrait = await prompts({
       type: "number",
       name: "value",
@@ -10,5 +14,5 @@ export async function retrait(){
     })
     solde -= retrait.value;
     console.log("Votre nouveau solde est de " + solde);
-    connect();
+    connect(choice);
    }
