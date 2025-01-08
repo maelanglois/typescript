@@ -29,7 +29,7 @@ Cette application doit être développée avec Typescript, et doit être exécut
 - Les choix possibles sont :
   <!-- - Déposer de l'argent -->
   <!-- - Retirer de l'argent -->
-  - Voir l'historique
+  <!-- - Voir l'historique -->
   <!-- - Voir le solde -->
   <!-- - Quitter _(automatiquement généré par l'application)_ -->
 
@@ -47,9 +47,9 @@ Cette application doit être développée avec Typescript, et doit être exécut
 
 ### Voir l'historique
 
-- L'utilisateur doit pouvoir voir l'historique de ses opérations
-- L'historique doit contenir la date, le type d'opération _(dépôt ou retrait)_, le montant, le solde après l'opération ainsi que la validité de l'opération _(réussie ou non)_
-- L'historique doit afficher les 10 dernières opérations, mais doit tout de même enregistrer toutes les opérations effectuées sans limite
+<!-- - L'utilisateur doit pouvoir voir l'historique de ses opérations -->
+<!-- - L'historique doit contenir la date, le type d'opération _(dépôt ou retrait)_, le montant, le solde après l'opération ainsi que la validité de l'opération _(réussie ou non)_ -->
+<!-- - L'historique doit afficher les 10 dernières opérations, mais doit tout de même enregistrer toutes les opérations effectuées sans limite -->
 
 ### Voir le solde
 
