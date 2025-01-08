@@ -1,5 +1,8 @@
 import type { Choice, PromptType } from "prompts";
 
+import { connect, solde } from "./fonctionnel/connect"; // Importation de la fonction et de la variable solde
+
+
 import prompts from "prompts";
 
 export interface CLIChoice extends Choice {
@@ -83,7 +86,7 @@ export class CLI {
    * Quit the CLI and exit the program.
    * Waits for a random time between 0 and 2 seconds before exiting.
    */
-  private async quit() {
+  public async quit() {
     const randomTime = Math.floor(Math.random() * 2); // Random time between 0 and 2 seconds
     await new Promise((resolve) => setTimeout(resolve, randomTime * 1000));
 
@@ -97,81 +100,27 @@ export class CLI {
     password: "password",
   }
 
-  const username = await CLI.askValue(
-    "Entrez votre nom d'utilisateur :",
-    "text"
-  );
-  const password = await CLI.askValue(
-    "Entrez votre mot de passe :",
-    "text"
-  );
+  const response = await prompts([
+    {
+      type: "text",
+      name: "username",
+      message: "Entrez votre nom d'utilisateur :",
+    },
+    {
+      type: "text",
+      name: "password",
+      message: "Entrez votre mot de passe :",
+    },
+  ]);
+  
+  const username = response.username;
+  const password = response.password;
 
   if (username === user.username && password === user.password) {
     console.log(`Vous êtes bien connecté.e.`);
-    this.connect();
+    connect(this);
   } else {
     console.log("Erreur lors de la connexion, veuillez réessayer.");
   }
- }
-
- public async connect(){
-  const response = await prompts({
-    type: "select",
-    name: "action",
-    message: "Quelle action voulez-vous faire ?",
-    choices: [
-        { title: "Déposer de l'argent", value: "depot" },
-        { title: "Retirer de l'argent", value: "retrait" },
-        { title: "Voir l'historique", value: "historique" },
-        { title: "Voir le solde", value: "solde" },
-        { title: "Quitter", value: "quitter" },
-      ],
-    });
-  
-    switch (response.action) {
-      case "depot":
-        this.depot();
-        break;
-      case "retrait":
-        this.retrait();
-        break;
-      case "historique":
-        console.log("Voir l'historique (fonctionnalité à implémenter).");
-        break;
-      case "solde":
-        this.solde();
-        break;
-      case "quitter":
-        this.quit();
-    }
- }
-
- public async solde(){
-  console.log("Votre solde est de " + solde);
-  this.connect();
- }
-
- public async depot() {
-  const deposer = await prompts({
-    type: "number",
-    name: "value",
-    message: "Combien d'argent voulez-vous déposer ?",
-    validate: (value) => (Number.isInteger(value) && value > 0 ? true : "Vous devez déposer un montant supérieur à 0.")
-  })
-  solde += deposer.value;
-  console.log("Votre nouveau solde est de " + solde);
-  this.connect();
- }
-
- public async retrait(){
-  const retrait = await prompts({
-    type: "number",
-    name: "value",
-    message:"Combien d'argent voulez-vous retirer ?",
-    validate: (value) => (Number.isInteger(value) && value > 0 ? true : "Vous devez retirer un montant supérieur à 0.")
-  })
-  solde -= retrait.value;
-  console.log("Votre nouveau solde est de " + solde);
-  this.connect();
  }
 }
