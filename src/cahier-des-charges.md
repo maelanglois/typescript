@@ -17,33 +17,33 @@ Cette application doit être développée avec Typescript, et doit être exécut
 
 ### Connexion
 
-- L'utilisateur doit pouvoir se connecter uniquement avec son code personnel _(PIN)_
-- Il n'y a pas de base de données, vous pouvez stocker les données en mémoire _(pas de persistance)_
-- La connexion est obligatoire pour accéder à l'application
-- Si le code PIN est incorrect, l'utilisateur doit être notifié
+<!-- - L'utilisateur doit pouvoir se connecter uniquement avec son code personnel _(PIN)_
+- Il n'y a pas de base de données, vous pouvez stocker les données en mémoire _(pas de persistance)_ -->
+<!-- - La connexion est obligatoire pour accéder à l'application -->
+<!-- - Si le code PIN est incorrect, l'utilisateur doit être notifié -->
 - Après 3 tentatives invalides, l'application doit se fermer
 
 ### Liste des choix possibles
 
 - Il faudra cependant compléter les fonctions pour qu'ils fassent ce qui est attendu !
 - Les choix possibles sont :
-  - Déposer de l'argent
-  - Retirer de l'argent
+  <!-- - Déposer de l'argent -->
+  <!-- - Retirer de l'argent -->
   - Voir l'historique
-  - Voir le solde
-  - Quitter _(automatiquement généré par l'application)_
+  <!-- - Voir le solde -->
+  <!-- - Quitter _(automatiquement généré par l'application)_ -->
 
 ### Déposer de l'argent
 
-- L'utilisateur doit pouvoir déposer de l'argent sur son compte
+<!-- - L'utilisateur doit pouvoir déposer de l'argent sur son compte
 - Il doit renseigner le montant à déposer, au travers d'un prompt numérique
-- Le montant doit être un entier positif _(pas de décimales)_
+- Le montant doit être un entier positif _(pas de décimales)_ -->
 
 ### Retirer de l'argent
 
-- L'utilisateur doit pouvoir retirer de l'argent de son compte
+<!-- - L'utilisateur doit pouvoir retirer de l'argent de son compte
 - Il doit renseigner le montant à retirer, au travers d'un prompt numérique
-- Le montant doit être un entier positif _(pas de décimales)_, qui sera déduit du solde
+- Le montant doit être un entier positif _(pas de décimales)_, qui sera déduit du solde -->
 
 ### Voir l'historique
 
@@ -53,13 +53,13 @@ Cette application doit être développée avec Typescript, et doit être exécut
 
 ### Voir le solde
 
-- L'utilisateur doit pouvoir voir le solde de son compte
+<!-- - L'utilisateur doit pouvoir voir le solde de son compte -->
 
 ### Quitter
 
 **Cette fonctionnalité est déjà implémentée, vous n'avez rien à faire !**
 
-- L'utilisateur doit pouvoir quitter l'application
+<!-- - L'utilisateur doit pouvoir quitter l'application -->
 
 ## Contraintes
 

@@ -23,6 +23,14 @@ const cli = new CLI([
       console.log("Création d'un compte");
     },
   },
+  {
+    title: "Se connecter",
+    value: "login",
+    action: async () => {
+      console.log("Se connecter");
+      await cli.connexion();
+    }
+  }
 ]);
 
 cli.menu();
